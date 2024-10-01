@@ -13,10 +13,10 @@ export default {
 
     <nav class="navbar">
         <ul>
-            <li>Home</li>
-            <li>About</li>
+            <li><RouterLink to="/">Home</RouterLink></li>
+            <li><RouterLink to="/chi-siamo">About</RouterLink></li>
             <li>Progetti</li>
-            <li>Contatti</li>
+            <li><RouterLink to="/contatti">Contatti</RouterLink></li>
         </ul>
     </nav>
 
@@ -35,8 +35,6 @@ header {
 .navbar {
     width: 70%;
     font-weight: 400;
-    // debug
-    border: 2px solid red;
 }
 
 ul {
@@ -45,6 +43,16 @@ ul {
         align-items: center;
         list-style-type: none;
     }
+
+a {
+ color: red;
+ text-decoration: none;
+}
+
+.router-link-active {
+    color: blue;
+    text-decoration: underline;
+}
 
 
 </style>
