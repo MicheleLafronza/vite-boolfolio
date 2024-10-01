@@ -55,6 +55,7 @@ export default {
                 </li>
             </ul>
             <span v-else>Nessuna tecnologia</span>
+            
         </li>
         
     </ul>
