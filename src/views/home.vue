@@ -15,7 +15,7 @@ export default {
 
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
     .home-container {
         width: 60%;
