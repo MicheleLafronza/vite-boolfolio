@@ -17,6 +17,9 @@ export default {
             <li><RouterLink :to="{name: 'about'}">About</RouterLink></li>
             <li><RouterLink :to="{name: 'projects'}">Progetti</RouterLink></li>
             <li><RouterLink :to="{name: 'contacts'}">Contatti</RouterLink></li>
+            <li><RouterLink :to="{name: 'techs'}">Tecnologie</RouterLink></li>
+            <li><RouterLink :to="{name: 'types'}">Tipi</RouterLink></li>
+            
         </ul>
     </nav>
 

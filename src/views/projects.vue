@@ -19,13 +19,13 @@ export default {
             .then(result => {
                 this.projects = result.data.projects.data 
                 // console.log(this.projects);
+                console.log(this.projects);
+                
             })
             .catch(error => {
                 console.log(error);
-                
             })
-            
-        }
+        },
     },
     mounted(){
         this.getApi()
@@ -45,17 +45,17 @@ export default {
 
     <ul>
 
-        <li v-for="project in projects">
-            Titolo: {{ project.title }} <strong>||</strong> Descrizione: {{ project.description }} <strong>||</strong> Cliente : {{ project.client }} <strong>||</strong> Tipo: {{ project.type.name }} <strong>||</strong> 
-             
+        <li class="project" v-for="project in projects" :key="project.id">
+            <RouterLink :to="{ name: 'details', params: {slug: project.slug}}">
+            <strong> Titolo: </strong> {{ project.title }} <strong>||</strong> <strong>Descrizione:</strong> {{ project.description }} <strong>|| Cliente : </strong> {{ project.client }} <strong>||</strong> Tipo: <span class="type"> {{ project.type.name }}</span> <strong>||</strong>  
             <ul v-if="project.technologies.length > 0">
                 Tecnologie:
-                <li v-for="tech in project.technologies">
+                <li class="tech" v-for="tech in project.technologies">
                     {{ tech.name }}
                 </li>
             </ul>
             <span v-else>Nessuna tecnologia</span>
-            
+            </RouterLink>
         </li>
         
     </ul>
@@ -69,14 +69,41 @@ export default {
 .container {
     width: 60%;
     margin: 0 auto;
+    background-color: blueviolet;
 }
 
 h1 {
+    padding: 10px;
     text-align: center;
+    color: white;
+}
+
+ul {
+    background-color: azure;
+    list-style-type: none;    
 }
 
 li {
     margin-top: 15px;
     margin-bottom: 15px;
+}
+
+.project {
+    border-bottom: 2px solid blue;
+    padding: 10px;
+}
+
+.tech {
+    list-style-type: none;
+    color: red;
+}
+
+.type {
+    color: burlywood;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
 </style>

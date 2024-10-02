@@ -32,6 +32,6 @@ export default {
   width: 100%;
   // debug
   // min-height: 800px;
-  border: 2px black solid;
+  // border: 2px black solid;
 }
 </style>
